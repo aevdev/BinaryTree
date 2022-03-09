@@ -206,12 +206,12 @@ private:
 		if (Root == nullptr) return false;
 		if (Root->pLeft)
 		{
-			if (Root->Data < Root->pLeft->Data && isTree(Root->pLeft) == false)
+			if (Root->Data < Root->pLeft->Data || isTree(Root->pLeft) == false)
 				return false;
 		}
 		else if (Root->pRight)
 		{
-			if (Root->Data < Root->pRight->Data && isTree(Root->pRight) == false)
+			if (Root->Data < Root->pRight->Data || isTree(Root->pRight) == false)
 				return false;
 		}
 		return true;
