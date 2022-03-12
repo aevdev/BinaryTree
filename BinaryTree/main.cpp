@@ -257,7 +257,17 @@ public:
 };
 
 //#define BASE_CHECK
+//#define TREE_CHECK
 
+int factorial(int n)
+{
+	return n ? factorial(n - 1)* n : 1;
+}
+
+double power(double a, int n)
+{
+	return n ? power(a, n - 1) * a: 1;
+}
 int main()
 {
 #ifdef BASE_CHECK
@@ -278,6 +288,7 @@ int main()
 	cout << "Sum of elements: " << tree.sum() << endl;
 	cout << "Average: " << tree.avg() << endl;
 #endif //BASE_CHECK
+#ifdef TREE_CHECK
 	int value;
 	Tree tree = { 50, 25, 75, 16, 32, 64, 80, 27, 35 };
 	tree.print();
@@ -290,5 +301,8 @@ int main()
 	cout << "\nPlease, enter element you want to erase: "; cin >> value;
 	tree.erase(value);
 	tree.print();
+#endif // TREE_CHECK
+	cout << factorial(4) << '\n';
+	cout << power(3, 3);
 	return 0;
 }
